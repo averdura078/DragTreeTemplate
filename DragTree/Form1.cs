@@ -8,25 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
 
 namespace DragTree
 {
     public partial class Form1 : Form
     {
-        // TODO - create an int variable to track currentRow,
-        // TODO - create a Stopwatch object called stopwatch 
+        //create an int variable to track currentRow,
+        //create a Stopwatch object called stopwatch 
         int currentRow = 1;
         Stopwatch stopwatch = new Stopwatch();
 
-        // TODO - create a timer on the form called lightTimer (interval 400ms)
-        // TODO - create the tick event for the lightTimer
-
-        // place the following comments in the lightTimer tick event
-        // TODO - create a switch block that checks currentRow. In each case
-        // it will light up the appropriate lights, (labels). 
-
-        // TODO - increment the currentRow value by 1
+        //create a timer on the form called lightTimer (interval 400ms)
+        //create the tick event for the lightTimer
 
         public Form1()
         {
@@ -41,15 +34,15 @@ namespace DragTree
 
         private void goButton_Click(object sender, EventArgs e)
         {
-            // TODO - stop the stopwatch
+            //stop the stopwatch
             stopwatch.Stop();
 
-            // TODO - check if the ellapsed time in milliseconds is > 0. 
-            // If yes show the time.
-            // If no show "FOUL START" 
+            //check if the ellapsed time in milliseconds is > 0. 
+            //if yes show the time.
+            //if no show "FOUL START" 
             if (stopwatch.ElapsedMilliseconds > 0)
             {
-                timeLabel.Text = stopwatch.Elapsed.TotalMilliseconds + "";
+                timeLabel.Text = stopwatch.Elapsed.ToString(@"ss\:ff");
             }
             else
             {
@@ -60,10 +53,10 @@ namespace DragTree
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            // TODO - reset the stopwatch
+            //reset the stopwatch
             stopwatch.Reset();
 
-            // TODO - put rows 1-3 colours back to DimGray and row 4 back to DarkOliveGreen
+            //put rows 1-3 colours back to DimGray and row 4 back to DarkOliveGreen
             row1col1.BackColor = Color.DimGray;
             row1col2.BackColor = Color.DimGray;
             row2col1.BackColor = Color.DimGray;
@@ -73,15 +66,15 @@ namespace DragTree
             row4col1.BackColor = Color.DarkOliveGreen;
             row4col2.BackColor = Color.DarkOliveGreen;
 
-            // TODO - reset row value and timeLabel text
+            //reset row value and timeLabel text
             currentRow = 1;
             timeLabel.Text = stopwatch.Elapsed.TotalMilliseconds + "";
         }
 
         private void lightTimer_Tick(object sender, EventArgs e)
         {
-            // TODO - create a switch block that checks currentRow. In each case
-            // it will light up the appropriate lights, (labels). 
+            //create a switch block that checks currentRow. In each case
+            //it will light up the appropriate lights, (labels). 
 
             switch (currentRow)
             {
@@ -105,7 +98,7 @@ namespace DragTree
                     break;
             }
 
-            // TODO - increment the currentRow value by 1
+            //increment the currentRow value by 1
             currentRow++;
         }
     }
