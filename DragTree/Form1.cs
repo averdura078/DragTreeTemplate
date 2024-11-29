@@ -28,7 +28,7 @@ namespace DragTree
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            // TODO - start the timer
+            //start the timer
             lightTimer.Start();
         }
 
